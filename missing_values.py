@@ -2,7 +2,7 @@
 def print_animal_ids(column_name, animal_ids, dataset_name = ''):
     if dataset_name != '':
         print(f"Animal IDs with missing values in '{column_name}' column that exist in {dataset_name} dataset:"
-      f"\n{animal_ids}")
+      f"\n{animal_ids}\n")
     else:
         print(f"Animal IDs with missing values in '{column_name}' column:\n{animal_ids}\n")
 
