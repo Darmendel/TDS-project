@@ -1,5 +1,5 @@
 from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
 
 
 # Function that fits and predicts a given column and a model
@@ -24,6 +24,7 @@ def fit_and_predict(column, X, y, validation_accuracies, test_accuracies, scaler
     val_accuracy = accuracy_score(y_val, y_val_pred)
     validation_accuracies.append(val_accuracy)
     print(f"Validation Accuracy for {column}: {val_accuracy}")
+    # print(f"{classification_report(y_val_pred, y_val)}\n")
 
     # Make predictions on test set
     y_test_pred = model.predict(x_test_scaled)
@@ -32,6 +33,7 @@ def fit_and_predict(column, X, y, validation_accuracies, test_accuracies, scaler
     test_accuracy = accuracy_score(y_test, y_test_pred)
     test_accuracies.append(test_accuracy)
     print(f"Test Accuracy for {column}: {test_accuracy}\n")
+    # print(f"{classification_report(y_test_pred, y_test)}\n")
 
     # Store feature importances
     feature_importances[column] = model.feature_importances_

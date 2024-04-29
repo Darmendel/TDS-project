@@ -44,14 +44,14 @@ def get_top_k(dtf, column_name, animal_type, k):
 
 
 # Function that only keeps the values of the top k colors of a given animal in a given dataset
-def set_top_k_colors(dtf, animal_name, k):
+def set_top_k_colors(dtf, animal_name, defualt_value, k):
     top_k_colors = get_top_k(dtf, 'color', animal_name, k).index
 
     # Identify rows with colors not in the top k colors
     not_top_k_colors = dtf[(dtf['animal_type'] == animal_name) & (~dtf['color'].isin(top_k_colors))]
 
-    # Replace the color values for those rows with 'Other color' (a default value)
-    dtf.loc[not_top_k_colors.index, 'color'] = 'Other color'
+    # Replace the color values for those rows with a default value
+    dtf.loc[not_top_k_colors.index, 'color'] = defualt_value
     
     return dtf
 
@@ -65,13 +65,13 @@ def sort_colors(colors):
 
 
 # Function that only keeps the values of the top k breeds of a given animal in a given dataset
-def set_top_k_breeds(dtf, animal_name, k):
+def set_top_k_breeds(dtf, animal_name, defualt_value, k):
     top_k_breeds = get_top_k(dtf, 'breed', animal_name, k).index
 
     # Identify rows with breeds not in the top k breeds
     not_top_k_breeds = dtf[(dtf['animal_type'] == animal_name) & (~dtf['breed'].isin(top_k_breeds))]
 
-    # Replace the breed values for those rows with 'Other breed' (a default value)
-    dtf.loc[not_top_k_breeds.index, 'breed'] = 'Other breed'
+    # Replace the breed values for those rows with a default value
+    dtf.loc[not_top_k_breeds.index, 'breed'] = defualt_value
     
     return dtf
