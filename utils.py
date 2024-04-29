@@ -27,16 +27,17 @@ def get_top_k(dtf, column_name, animal_type, k):
     return top_k_with_percentages
 
 
-# # Function that returns top k values of an animal in a given column
-# def get_top_k(dtf, column_name, type, k):
-#     vals = dtf[dtf['animal_type'] == type][column_name]
-#     return vals.value_counts().head(k)
+# Function that only keeps the values of the top k colors of a given animal in a given dataset
+def set_top_k_colors(dtf, animal_name, k):
+    top_k_colors = get_top_k(dtf, 'color', animal_name, k).index
 
+    # Identify rows with colors not in the top k colors
+    not_top_k_colors = dtf[(dtf['animal_type'] == animal_name) & (~dtf['color'].isin(top_k_colors))]
 
-# # Function that returns top k breeds of an animal
-# def get_top_k_breeds(dtf, type, k):
-#     breeds = dtf[dtf['animal_type'] == type]['breed']
-#     return breeds.value_counts().head(k)
+    # Replace the color values for those rows with 'Other color' (a default value)
+    dtf.loc[not_top_k_colors.index, 'color'] = 'Other color'
+    
+    return dtf
 
 
 # Function to convert age strings to years
