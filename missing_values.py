@@ -1,10 +1,19 @@
-# Function that prints all the id's of animals who have missing values in a given column
+# Function that prints all the ids of animals who have missing values in a given column
 def print_animal_ids(column_name, animal_ids, dataset_name = ''):
     if dataset_name != '':
         print(f"Animal IDs with missing values in '{column_name}' column that exist in {dataset_name} dataset:"
       f"\n{animal_ids}\n")
     else:
         print(f"Animal IDs with missing values in '{column_name}' column:\n{animal_ids}\n")
+
+
+# Function that prints the number of ids of animals who have missing values in a given column
+def count_missing_values(column_name, animal_ids, dataset_name = ''):
+    if dataset_name != '':
+        print(f"Number of animal IDs with missing values in '{column_name}' column that exist in {dataset_name}"
+            f" dataset is {len(animal_ids)}.\n")
+    else:
+        print(f"Number of animal IDs with missing values in '{column_name}' column is {len(animal_ids)}.")
 
 
 # Function that returns all 'animal_id' of rows with None values in a given column
