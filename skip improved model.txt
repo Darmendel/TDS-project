@@ -1,0 +1,26 @@
+Column 'outcome_type_Adoption':
+Validation scores:
+Accuracy: 0.87193, Precision: 0.86881, Recall: 0.87535, F1-score: 0.87052
+Test scores:
+Accuracy: 0.87274, Precision: 0.86982, Recall: 0.87531, F1-score: 0.87141
+Column 'outcome_type_Euthanasia':
+Validation scores:
+Accuracy: 0.99635, Precision: 0.98369, Recall: 0.99145, F1-score: 0.98753
+Test scores:
+Accuracy: 0.99648, Precision: 0.98478, Recall: 0.99115, F1-score: 0.98794
+Column 'outcome_type_Return to Owner':
+Validation scores:
+Accuracy: 0.87507, Precision: 0.82395, Recall: 0.74437, F1-score: 0.77393
+Test scores:
+Accuracy: 0.87463, Precision: 0.81272, Recall: 0.74008, F1-score: 0.76776
+Column 'outcome_type_Transfer':
+Validation scores:
+Accuracy: 0.98258, Precision: 0.97615, Recall: 0.98282, F1-score: 0.97939
+Test scores:
+Accuracy: 0.98069, Precision: 0.97419, Recall: 0.98057, F1-score: 0.97730
+--------------------------------------------------------------------------
+Average Validation Scores:
+Accuracy: 0.93148, Precision: 0.91315, Recall: 0.89850, F1-score: 0.90284
+Average Test Scores:
+Accuracy: 0.93113, Precision: 0.91038, Recall: 0.89678, F1-score: 0.90110
+
